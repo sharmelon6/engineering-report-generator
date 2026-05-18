@@ -3,7 +3,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from config import (
+from app.core.config import (
     CHARTS_DIR,
     LOW_DO_THRESHOLD_MG_L,
     HIGH_EFFLUENT_AMMONIA_THRESHOLD_MG_L,

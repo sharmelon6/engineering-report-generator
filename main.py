@@ -1,26 +1,26 @@
 from pathlib import Path
 
 from dotenv import load_dotenv
-from config import (
+from app.core.config import (
     DATA_FILE_PATH,
     REPORTS_DIR,
     LLM_REPORT_FILE,
 )
 
-from calculations import calculate_engineering_metrics, print_engineering_results
-from data_loader import (
+from app.services.calculations import calculate_engineering_metrics, print_engineering_results
+from app.services.data_loader import (
     load_wastewater_data,
     validate_wastewater_columns,
     validate_numeric_columns,
 )
-from llm_report_generator import generate_llm_engineering_report
-from plotting import generate_charts
-from report_generator import generate_markdown_report
-from html_report_generator import generate_html_report
+from app.services.plotting import generate_charts
+from app.reports.markdown_report import generate_markdown_report
+from app.reports.html_report import generate_html_report
+from app.reports.llm_report import generate_llm_engineering_report
 
 
 # -------------------------------------------------
-# Main Project Workfolow
+# Main Project Workflow
 # -------------------------------------------------
 
 

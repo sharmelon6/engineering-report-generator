@@ -1,5 +1,5 @@
 import pandas as pd
-from config import (
+from app.core.config import (
     LOW_DO_THRESHOLD_MG_L,
     HIGH_EFFLUENT_AMMONIA_THRESHOLD_MG_L,
     MIN_PH,

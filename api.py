@@ -6,17 +6,17 @@ import numpy as np
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 
-from calculations import calculate_engineering_metrics
-from data_loader import (
+from app.core.config import REPORTS_DIR, LLM_REPORT_FILE
+from app.services.calculations import calculate_engineering_metrics
+from app.services.data_loader import (
     load_wastewater_data,
     validate_numeric_columns,
     validate_wastewater_columns,
 )
-from html_report_generator import generate_html_report
-from llm_report_generator import generate_llm_engineering_report
-from plotting import generate_charts
-from report_generator import generate_markdown_report
-from config import REPORTS_DIR, LLM_REPORT_FILE
+from app.services.plotting import generate_charts
+from app.reports.html_report import generate_html_report
+from app.reports.llm_report import generate_llm_engineering_report
+from app.reports.markdown_report import generate_markdown_report
 
 
 # -------------------------------------------------
