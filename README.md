@@ -749,6 +749,7 @@ This launches the fully formatted engineering report with embedded charts.
 
 ---
 
+
 # Generated Outputs
 
 ## Charts
@@ -782,6 +783,140 @@ Saved to:
 ```text
 reports/llm_wastewater_performance_report.md
 ```
+
+---
+
+# FastAPI REST API Integration
+
+The project now includes a FastAPI backend that exposes the engineering analytics pipeline as a REST API.
+
+This allows external systems, frontend dashboards, or client applications to upload wastewater datasets and receive structured engineering analysis automatically.
+
+The API currently supports:
+
+- Excel file uploads
+- Automated engineering calculations
+- Engineering chart generation
+- Markdown report generation
+- HTML report generation
+- AI-assisted report generation
+- JSON engineering summaries
+
+The FastAPI implementation simulates how a production engineering analytics service might operate in a cloud environment.
+
+---
+
+## API Endpoint
+
+### Generate Engineering Report
+
+```http
+POST /generate-report
+```
+
+Request type:
+
+```text
+multipart/form-data
+```
+
+Input:
+
+- Excel wastewater operational dataset
+
+Output:
+
+- Engineering metrics
+- Operational event summaries
+- Generated report file locations
+- AI-assisted engineering interpretation
+
+---
+
+## Running the API Server
+
+Start the FastAPI server locally:
+
+```bash
+uv run uvicorn api:app --reload
+```
+
+Open Swagger UI documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+The Swagger interface allows:
+
+- Interactive API testing
+- File uploads
+- Endpoint inspection
+- Automatic schema generation
+- Rapid backend debugging
+
+---
+
+## Example API Workflow
+
+```text
+Excel Upload
+    ↓
+FastAPI Endpoint
+    ↓
+Data Validation
+    ↓
+Engineering Calculations
+    ↓
+Chart Generation
+    ↓
+Report Generation
+    ↓
+JSON Response
+```
+
+---
+
+## Example API Response Structure
+
+```json
+{
+  "status": "success",
+  "uploaded_file": "sample_wastewater_data.xlsx",
+  "key_metrics": {
+    "average_flow_rate": 1176.46,
+    "average_dissolved_oxygen": 2.33,
+    "average_effluent_ammonia": 8.54,
+    "average_ammonia_removal": 82.05
+  },
+  "events": {
+    "low_dissolved_oxygen_events": 8,
+    "high_effluent_ammonia_events": 9
+  },
+  "generated_files": {
+    "markdown_report": "reports/wastewater_performance_report.md",
+    "html_report": "reports/wastewater_performance_report.html",
+    "llm_report": "reports/llm_wastewater_performance_report.md"
+  }
+}
+```
+
+---
+
+## FastAPI Engineering Concepts Demonstrated
+
+The API implementation demonstrates:
+
+- REST API development
+- Multipart file upload handling
+- Backend engineering workflows
+- JSON serialization
+- Automated report generation
+- Server-side orchestration
+- Production-style pipeline design
+- API documentation with Swagger/OpenAPI
+
+This stage expanded the project from a standalone Python analytics script into a backend-capable engineering software platform.
 
 ---
 
